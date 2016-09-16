@@ -1,0 +1,37 @@
+{
+  "author": "Matt McKellar-Spence",
+  "bugs": {
+    "url": "https://github.com/MattMS/flogging.js/issues"
+  },
+  "dependencies": {
+    "ramped.curry": "^0.1.0",
+    "ramped.pipe": "^0.2.0",
+    "ramped.set": "^0.1.0"
+  },
+  "description": "Console-style inputs for flogging.js.",
+  "devDependencies": {
+    "coffee-script": "^1.10.0",
+    "coffeetape": "^1.0.1",
+    "concat-stream": "^1.5.2",
+    "flogging.stream_base": "^0.1.1",
+    "rimraf": "^2.5.4"
+  },
+  "homepage": "https://github.com/MattMS/flogging.js/tree/master/console_inputs#readme",
+  "keywords": [
+    "functional",
+    "logging"
+  ],
+  "license": "MIT",
+  "main": "main.js",
+  "name": "flogging.console_inputs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MattMS/flogging.js.git"
+  },
+  "scripts": {
+    "clean": "rimraf main.js",
+    "prepublish": "coffee -c main.coffee.md",
+    "test": "coffeetape test.coffee.md"
+  },
+  "version": "0.1.0"
+}
