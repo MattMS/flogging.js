@@ -1,0 +1,34 @@
+{
+  "author": "Matt McKellar-Spence",
+  "bugs": {
+    "url": "https://github.com/MattMS/flogging.js/issues"
+  },
+  "dependencies": {
+    "ramped.curry": "^0.1.0"
+  },
+  "description": "The base functions for a functional, streaming logging library.",
+  "devDependencies": {
+    "coffee-script": "^1.10.0",
+    "coffeetape": "^1.0.1",
+    "concat-stream": "^1.5.2",
+    "ramped.pipe": "^0.2.0"
+  },
+  "homepage": "https://github.com/MattMS/flogging.js/tree/master/stream_base#readme",
+  "keywords": [
+    "functional",
+    "logging",
+    "streaming",
+    "streams"
+  ],
+  "license": "MIT",
+  "main": "main.js",
+  "name": "flogging.stream_base",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MattMS/flogging.js.git"
+  },
+  "scripts": {
+    "test": "coffeetape test.coffee.md"
+  },
+  "version": "0.1.0"
+}
