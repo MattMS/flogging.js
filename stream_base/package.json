@@ -11,7 +11,8 @@
     "coffee-script": "^1.10.0",
     "coffeetape": "^1.0.1",
     "concat-stream": "^1.5.2",
-    "ramped.pipe": "^0.2.0"
+    "ramped.pipe": "^0.2.0",
+    "rimraf": "^2.5.4"
   },
   "homepage": "https://github.com/MattMS/flogging.js/tree/master/stream_base#readme",
   "keywords": [
@@ -28,7 +29,9 @@
     "url": "git+https://github.com/MattMS/flogging.js.git"
   },
   "scripts": {
+    "clean": "rimraf main.js",
+    "prepublish": "coffee -c main.coffee.md",
     "test": "coffeetape test.coffee.md"
   },
-  "version": "0.1.0"
+  "version": "0.1.1"
 }
