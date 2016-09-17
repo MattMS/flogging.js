@@ -51,14 +51,42 @@ The setup function accepts 2 parameters:
 
 This provides the interface to logging calls.
 
-Usually should accept 2 parameters: label and value.
+Must accept the sender as the first parameter.
+Should accept 2 more parameters: label and value.
 
-Must return the log message Object.
+Must create the log message Object and then call the sender with it.
+
+Must return the value (last parameter) passed in.
+
+For example:
+
+	curry = require('ramped.curry')
+
+	started = curry((sender, label, value) => {
+		sender({label: label, value: value})
+		return value
+	})
 
 
 ### Sender
 
 Receives a single parameter: the log message Object.
+
+You can add common fields with a pipe here:
+
+	curry = require('ramped.curry')
+	flogging = require('flogging.stream_base')
+	pipe = require('ramped.pipe')
+
+	started = curry(pipe([
+		curry((message) => {
+			message['name'] = 'my logger'
+			return message
+		}),
+		flogging.send(logger)
+	]))
+
+Make sure you always return the `message` Object!
 
 
 ## Functions

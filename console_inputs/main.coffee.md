@@ -14,38 +14,42 @@ This contain the main module exports for this package.
 
 ## Add property
 
-	add_type = set('type')
+- https://github.com/trentm/node-bunyan#levels
+
+	# add_level = set 'level'
+
+	add_type = set 'type'
 
 
 ## Exports
 
 	module.exports = curry (starter, sender)->
-		error: pipe [
-			starter,
-			add_type('error'),
+		error: starter pipe [
+			# add_level 50
+			add_type 'error'
 			sender
 		]
 
-		info: pipe [
-			starter,
-			add_type('info'),
+		info: starter pipe [
+			# add_level 30
+			add_type 'info'
 			sender
 		]
 
-		log: pipe [
-			starter,
-			add_type('log'),
+		log: starter pipe [
+			# add_level 20 # `debug` level in Bunyan.
+			add_type 'log'
 			sender
 		]
 
-		trace: pipe [
-			starter,
-			add_type('trace'),
+		trace: starter pipe [
+			# add_level 10
+			add_type 'trace'
 			sender
 		]
 
-		warn: pipe [
-			starter,
-			add_type('warn'),
+		warn: starter pipe [
+			# add_level 40
+			add_type 'warn'
 			sender
 		]
