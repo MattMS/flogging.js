@@ -25,7 +25,7 @@ Since this includes only the core functionality, this example requires more step
 
 You can customise your logging calls to do all kinds of message-mangling.
 
-	info = R.pipe(flogging_base.make_note, flogging_base.send(logger))
+	info = flogging_base.make_note(flogging_base.send(logger))
 
 Outputs an Object Stream.
 

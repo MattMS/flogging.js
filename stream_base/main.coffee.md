@@ -14,15 +14,18 @@ This contain the main module exports for this package.
 
 ### Start new log entry
 
-	module.exports.make_note = curry (label, value)->
-		label: label
-		value: value
+	module.exports.make_note = curry (sender, label, value)->
+		sender
+			label: label
+			value: value
+
+		value
 
 
 ### Pipe log Stream to another Stream
 
 	module.exports.pipe_to_stream = curry (logger, other_stream)->
-		logger.pipe(other_stream)
+		logger.pipe other_stream
 
 
 ### Send log entry to log Stream
@@ -30,7 +33,7 @@ This contain the main module exports for this package.
 	module.exports.send = curry (logger, message)->
 		logger.push message
 
-		message.value
+		message
 
 
 ### Start new log Stream
