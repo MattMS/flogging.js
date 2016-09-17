@@ -46,13 +46,13 @@
 		out_stream = concat_stream (actual_output)->
 			t.deepEqual actual_output, desired_output
 
-		# log = start_console_text_stream(process.stdout)
-		log = start_console_stream(out_stream)
+		# log = start_console_text_stream process.stdout
+		log = start_console_stream out_stream
 
-		log.error('error message', 4)
-		log.info('info message', 8)
-		log.log('log message', 16)
-		log.trace('trace message', 32)
-		log.warn('warn message', 64)
+		log.error 'error message', 4
+		log.info 'info message', 8
+		log.log 'log message', 16
+		log.trace 'trace message', 32
+		log.warn 'warn message', 64
 
 		log.stop()

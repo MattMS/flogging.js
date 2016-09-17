@@ -21,23 +21,23 @@ This contain the main module exports for this package.
 ## Exports
 
 	module.exports.make_json_text_stream = (output_stream)->
-		json_text_stream = through2_map.obj(fix_json_chunk)
+		json_text_stream = through2_map.obj fix_json_chunk
 
-		json_text_stream.pipe(output_stream)
+		json_text_stream.pipe output_stream
 
 		json_text_stream
 
 	module.exports.start_console_stream = (output_stream)->
 		logger = flogging_base.start()
 
-		flogging_base.pipe_to_stream(logger, output_stream)
+		flogging_base.pipe_to_stream logger, output_stream
 
-		log = flogging_console(flogging_base.make_note, flogging_base.send(logger))
+		log = flogging_console flogging_base.make_note, flogging_base.send logger
 
 		log.stop = ->
-			flogging_base.stop(logger)
+			flogging_base.stop logger
 
 		log
 
 	module.exports.start_console_text_stream = (output_stream)->
-		module.exports.start_console_stream(module.exports.make_json_text_stream(output_stream))
+		module.exports.start_console_stream module.exports.make_json_text_stream output_stream

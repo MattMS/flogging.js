@@ -3,6 +3,11 @@
 This library is intended to make logging in functional programming a bit easier.
 It should play nicely with [Ramda](http://ramdajs.com/).
 
+**Please note:** This library should still be considered experimental and functions may change at any time.
+
+You are encouraged to [read the source](./main.coffee.md) and use included libraries directly.
+Consider this like a [Mercury](https://github.com/Raynos/mercury)-inspired logging collection.
+
 
 ## Installing
 
@@ -44,7 +49,7 @@ Use `start_console_stream` (note missing `_text_`) to output the logs to a Strea
 
 	log = flogging.start_console_stream(out_stream)
 
-	log.info('Super informational')
+	log.info('Super informational', 12)
 
 	log.stop()
 
