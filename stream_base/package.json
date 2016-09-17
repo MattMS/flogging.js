@@ -4,7 +4,8 @@
     "url": "https://github.com/MattMS/flogging.js/issues"
   },
   "dependencies": {
-    "ramped.curry": "^0.1.0"
+    "ramped.curry": "^0.1.0",
+    "through2": "^2.0.1"
   },
   "description": "The base functions for a functional, streaming logging library.",
   "devDependencies": {
@@ -33,5 +34,5 @@
     "prepublish": "coffee -c main.coffee.md",
     "test": "coffeetape test.coffee.md"
   },
-  "version": "0.1.1"
+  "version": "0.2.0"
 }

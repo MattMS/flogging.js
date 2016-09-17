@@ -3,16 +3,11 @@
 This contain the main module exports for this package.
 
 
-## Imports
-
-### Core imports
-
-	{Readable} = require 'stream'
-
-
-### Library imports
+## Library imports
 
 	curry = require 'ramped.curry'
+
+	through2 = require 'through2'
 
 
 ## Exports
@@ -41,7 +36,9 @@ This contain the main module exports for this package.
 ### Start new log Stream
 
 	module.exports.start = ->
-		new Readable objectMode: true
+		through2.obj()
+		# through2.obj (chunk, encoding, callback)->
+		# 	callback null, chunk
 
 
 ### Stop log Stream
